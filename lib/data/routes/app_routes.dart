@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:for_sample/presentation/screen/home/home_page.dart';
-import 'package:for_sample/presentation/screen/splash/splash_page.dart';
+import 'package:for_sample/presentation/page/home/home_page.dart';
+import 'package:for_sample/presentation/page/splash/splash_page.dart';
 
 class MyRouteNames {
   static const String home = '/home';

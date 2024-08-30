@@ -16,10 +16,10 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Timer(const Duration(seconds: 4), () {
-      Navigator.pushNamed(
+      Navigator.pushNamedAndRemoveUntil(
         context,
         MyRouteNames.home,
-        // (predicate) => false,
+        (predicate) => false,
       );
     });
     super.initState();
