@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ExelPage extends StatelessWidget {
-  const ExelPage({super.key});
+class Exel extends StatelessWidget {
+  const Exel({super.key});
 
   @override
   Widget build(BuildContext context) {

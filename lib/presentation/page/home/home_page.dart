@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:for_sample/presentation/screen/currency_page.dart';
-import 'package:for_sample/presentation/screen/exel_page.dart';
-import 'package:for_sample/presentation/screen/pdf_page.dart';
-import 'package:for_sample/presentation/screen/profile_page.dart';
+import 'package:for_sample/presentation/screen/pdf_screen.dart';
+import 'package:for_sample/presentation/widget/currency.dart';
+import 'package:for_sample/presentation/widget/exel.dart';
+import 'package:for_sample/presentation/widget/translate.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,26 +14,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   List pages = const [
-    CurrencyPage(),
-    ExelPage(),
-    PdfPage(),
-    ProfilePage(),
+    Currency(),
+    Exel(),
+    PdfScreen(),
+    Translate(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          "Home Work",
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
-          ),
-        ),
+      body: SafeArea(
+        child: pages[currentIndex],
       ),
-      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         selectedItemColor: Colors.red,
@@ -61,8 +52,8 @@ class _HomePageState extends State<HomePage> {
             label: "PDF",
           ),
           BottomNavigationBarItem(
-             icon: Icon(Icons.person, size: 36),
-            label: "Profile",
+            icon: Icon(Icons.translate_sharp, size: 36),
+            label: "Translate",
           ),
         ],
       ),

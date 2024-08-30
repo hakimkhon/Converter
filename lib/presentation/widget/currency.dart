@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CurrencyPage extends StatelessWidget {
-  const CurrencyPage({super.key});
+class Currency extends StatelessWidget {
+  const Currency({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:for_sample/data/core/constant/const_sizes.dart';
 
-class PdfPage extends StatelessWidget {
-  const PdfPage({super.key});
+class Invoys extends StatelessWidget {
+  const Invoys({super.key});
 
   @override
   Widget build(BuildContext context) {
