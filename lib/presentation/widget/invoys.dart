@@ -6,9 +6,9 @@ class Invoys extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _textUtkazmaMiqdori = TextEditingController();
-    final _textJunatuvchiKartasi = TextEditingController();
-    final _textQabulqiluvchiKartasi = TextEditingController();
+    final textUtkazmaMiqdori = TextEditingController();
+    final textJunatuvchiKartasi = TextEditingController();
+    final textQabulqiluvchiKartasi = TextEditingController();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: ConstSizes.width(4, context)),
       child: Column(
@@ -26,9 +26,9 @@ class Invoys extends StatelessWidget {
               ),
             ),
           ),
-          myFunc(context, "O'tkazma miqdori", _textUtkazmaMiqdori),
-          myFunc(context, "Jo'natuvchi kartasi", _textJunatuvchiKartasi),
-          myFunc(context, "Qabul qiluvchi kartasi", _textQabulqiluvchiKartasi),
+          myFunc(context, "O'tkazma miqdori", textUtkazmaMiqdori),
+          myFunc(context, "Jo'natuvchi kartasi", textJunatuvchiKartasi),
+          myFunc(context, "Qabul qiluvchi kartasi", textQabulqiluvchiKartasi),
         ],
       ),
     );
