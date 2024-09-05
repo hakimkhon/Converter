@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:for_sample/data/core/resource/assets_path.dart';
-import 'package:pdfx/pdfx.dart';
+import 'package:for_sample/presentation/widget/exel.dart';
+import 'package:for_sample/presentation/widget/invoys.dart';
+import 'package:for_sample/presentation/widget/pdf.dart';
 
 class PdfScreen extends StatefulWidget {
   const PdfScreen({super.key});
@@ -10,69 +11,46 @@ class PdfScreen extends StatefulWidget {
 }
 
 class _PdfScreenState extends State<PdfScreen> {
-  // int currentIndex = 0;
-  // final pageController = PageController();
-  // static const int initialPage = 1;
-  late PdfControllerPinch pdfControllerPinch;
-  @override
-  void initState() {
-    super.initState();
-    pdfControllerPinch = PdfControllerPinch(
-      document: PdfDocument.openAsset('assets/pdf/ibodati_islomiya.pdf'),
-      // initialPage: initialPage,
-    );
-  }
-
-  // @override
-  // void dispose() {
-  //   pdfControllerPinch.dispose();
-  //   super.dispose();
-  // }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: const Text(
-          'FileName',
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.navigate_before),
-            onPressed: () {
-              pdfControllerPinch.previousPage(
-                duration: const Duration(milliseconds: 100),
-                curve: Curves.ease,
-              );
-            },
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          leading: const Icon(
+            Icons.sort_rounded,
+            color: Colors.black87,
           ),
-          // PdfPageNumber(
-          //   controller: pdfController,
-          //   builder: (_, loadingState, pageNumber, totalPages) => Overlay()(
-          //     alignment:
-          //   )
-          // ),
-        ],
-      ),
-      body: _buildUI(),
-    );
-  }
-
-  Widget _buildUI() {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: _pdfView(),
+          centerTitle: true,
+          backgroundColor: Colors.blue[200],
+          bottom: const TabBar(
+            indicatorPadding: EdgeInsets.all(2),
+            labelPadding: EdgeInsets.all(10),
+            indicatorWeight: 5,
+            indicatorColor: Colors.white,
+            tabs: [
+              Text('    Invoys   ', style: TextStyle(fontSize: 24)),
+              Text('    Exsel    ', style: TextStyle(fontSize: 24)),
+              Text('     Pdf     ', style: TextStyle(fontSize: 24)),
+            ],
+          ),
+          title: Text(
+            'Kerakli bo\'limni tanlang',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.indigo[900],
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-      ],
-    );
-  }
-
-  Widget _pdfView() {
-    return Expanded(
-      child: PdfViewPinch(controller: pdfControllerPinch),
+        body: const TabBarView(
+          children: [
+            Invoys(),
+            Exel(),
+            Pdf(),
+          ],
+        ),
+      ),
     );
   }
 }

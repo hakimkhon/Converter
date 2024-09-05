@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:for_sample/data/core/constant/consts.dart';
 import 'package:for_sample/data/core/resource/assets_path.dart';
 import 'package:for_sample/data/routes/app_routes.dart';
 import 'package:lottie/lottie.dart';
@@ -28,8 +29,12 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Lottie.asset(LottieAssets.lottieName),
+      backgroundColor: MyColors.bgDarkColor,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Lottie.asset(LottieAssets.lottieName),
+        ),
       ),
     );
   }

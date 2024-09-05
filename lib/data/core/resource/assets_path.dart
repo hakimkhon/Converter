@@ -3,7 +3,9 @@ const String lottiePath = "assets/lottie";
 const String pdfPath = "assets/pdf";
 
 class ImageAssets {
-  static const String imageName = "$imagePath/hello_world.jpeg";  
+  static const String bg = "$imagePath/bg.png";  
+  static const String pdfIcon = "$imagePath/pdf_icon.png";  
+  static const String pdfFile = "$imagePath/pdf_file.png";  
 }
 class LottieAssets {
   static const String lottieName = "$lottiePath/animation.json";  

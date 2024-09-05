@@ -1,65 +1,122 @@
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:for_sample/data/core/constant/consts.dart';
+import 'package:for_sample/data/core/resource/assets_path.dart';
+import 'package:for_sample/presentation/widget/open_file_btn.dart';
 import 'package:open_file/open_file.dart';
 
-class Pdf extends StatefulWidget {
+class Pdf extends StatelessWidget {
   const Pdf({super.key});
 
   @override
-  State<Pdf> createState() => _PdfState();
-}
-
-class _PdfState extends State<Pdf> {
-  // static const int initialPage = 1;
-  // late PdfControllerPinch pdfController;
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   pdfController = PdfControllerPinch(
-  //     document: PdfDocument.openFile('filePath'),
-  //     initialPage: initialPage,
-  //   );
-  // }
-
-  // @override
-  // void dispose() {
-  //   pdfController.dispose();
-  //   super.dispose();
-  // }
-
-  @override
   Widget build(BuildContext context) {
-    return Column(
-      // crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        OutlinedButton(
-          onPressed: () async {
-            final result = await FilePicker.platform.pickFiles(
-              allowMultiple: true,
-              type: FileType.custom,
-              allowedExtensions: ['pdf'],
-            );
-            if (result == null) return;
-
-            final file = result.files.first;
-            openFile(file);
-          },
-          child: const Center(
-            // child: Text(
-            //   'PDF fayl yuklash',
-            //   style: TextStyle(
-            //     fontSize: 24,
-            //     color: Colors.blue,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              // alignment: Alignment.centerLeft,
+              width: double.infinity,
+              color: Colors.blue,
+              child: Image.asset(ImageAssets.bg),
+            ),
           ),
-        )
-      ],
+          Expanded(
+            flex: 5,
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    // color: Colors.blue,
+                    padding: EdgeInsets.all(ConstSizes.width(5, context)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Recent files',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 14),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              color: MyColors.btnColor,
+                            ),
+                            child: ListView.separated(
+                                physics: const BouncingScrollPhysics(),
+                                shrinkWrap: true,
+                                itemBuilder: ((context, index) {
+                                  return ListTile(
+                                    leading: Image.asset(ImageAssets.pdfIcon),
+                                    title: const Text(
+                                      'Filename',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    subtitle: const Text(
+                                      'Path to file',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.orange,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    trailing: IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.cancel,
+                                          color: Colors.white,
+                                        )),
+                                  );
+                                }),
+                                separatorBuilder: ((context, index) =>
+                                    const Divider(
+                                      color: Colors.white,
+                                    )),
+                                itemCount: 5),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      OpenFileBtn(
+                        title: "Create file",
+                        onTap: () {},
+                      ),
+                      OpenFileBtn(
+                        title: "Open file",
+                        onTap: () {},
+                      ),
+                      OpenFileBtn(
+                        title: "My file",
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 
-  void openFile(PlatformFile file) {
-    OpenFile.open(file.path!);
-  }
+  // void openFile(PlatformFile file) {
+  //   OpenFile.open(file.path!);
+  // }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:for_sample/data/core/constant/const_sizes.dart';
+import 'package:for_sample/data/core/constant/consts.dart';
 
 class Invoys extends StatelessWidget {
   const Invoys({super.key});
@@ -29,6 +29,7 @@ class Invoys extends StatelessWidget {
           myFunc(context, "O'tkazma miqdori", textUtkazmaMiqdori),
           myFunc(context, "Jo'natuvchi kartasi", textJunatuvchiKartasi),
           myFunc(context, "Qabul qiluvchi kartasi", textQabulqiluvchiKartasi),
+          // myFunc(context, "Qabul qiluvchi Familasi", textQabulqiluvchiKartasi),
         ],
       ),
     );
