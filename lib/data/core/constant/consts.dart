@@ -13,6 +13,7 @@ class ConstSizes {
 
 class MyColors {
   static const bgColor = Color.fromARGB(255, 168, 238, 254);
+  static const bgBody = Color.fromARGB(250, 160, 238, 254);
   static const bgDarkColor = Color.fromARGB(255, 35, 40, 45);
   static const textColor = Colors.black12;
   static const btnColor = Color.fromARGB(255, 31, 42, 104);

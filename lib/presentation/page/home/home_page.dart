@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(backgroundColor: MyColors.bgColor),
       body: SafeArea(
         child: pages[currentIndex],
       ),

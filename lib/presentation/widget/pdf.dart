@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:for_sample/data/core/constant/consts.dart';
 import 'package:for_sample/data/core/resource/assets_path.dart';
+import 'package:for_sample/data/routes/app_routes.dart';
 import 'package:for_sample/presentation/widget/open_file_btn.dart';
-import 'package:open_file/open_file.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class Pdf extends StatelessWidget {
   const Pdf({super.key});
@@ -10,14 +11,15 @@ class Pdf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColors.bgBody,
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              // alignment: Alignment.centerLeft,
-              width: double.infinity,
-              color: Colors.blue,
-              child: Image.asset(ImageAssets.bg),
+            child: ZoomTapAnimation(
+              onTap: () {
+                Navigator.pushNamed(context, MyRouteNames.openPdf);
+              },
+              child: Image.asset(ImageAssets.bg, width: 80,),
             ),
           ),
           Expanded(

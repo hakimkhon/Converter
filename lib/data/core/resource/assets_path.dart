@@ -11,5 +11,5 @@ class LottieAssets {
   static const String lottieName = "$lottiePath/animation.json";  
 }
 class PdfAssets {
-  static const String kitob = "$pdfPath/ibodati_islomiya.pdf";  
+  static const String kitob = "$pdfPath/uzchasys.pdf";  
 }

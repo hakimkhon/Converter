@@ -9,28 +9,31 @@ class Invoys extends StatelessWidget {
     final textUtkazmaMiqdori = TextEditingController();
     final textJunatuvchiKartasi = TextEditingController();
     final textQabulqiluvchiKartasi = TextEditingController();
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: ConstSizes.width(4, context)),
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: ConstSizes.height(3, context),
-            ),
-            child: Text(
-              'To\'lov malumotlarini kiriting!',
-              style: TextStyle(
-                fontSize: 24,
-                color: Colors.indigo[900],
-                fontWeight: FontWeight.bold,
+    return Container(
+      color: MyColors.bgBody,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: ConstSizes.width(2, context)),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: ConstSizes.height(3, context),
+              ),
+              child: Text(
+                'To\'lov malumotlarini kiriting!',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.indigo[900],
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          myFunc(context, "O'tkazma miqdori", textUtkazmaMiqdori),
-          myFunc(context, "Jo'natuvchi kartasi", textJunatuvchiKartasi),
-          myFunc(context, "Qabul qiluvchi kartasi", textQabulqiluvchiKartasi),
-          // myFunc(context, "Qabul qiluvchi Familasi", textQabulqiluvchiKartasi),
-        ],
+            myFunc(context, "O'tkazma miqdori", textUtkazmaMiqdori),
+            myFunc(context, "Jo'natuvchi kartasi", textJunatuvchiKartasi),
+            myFunc(context, "Qabul qiluvchi kartasi", textQabulqiluvchiKartasi),
+            // myFunc(context, "Qabul qiluvchi Familasi", textQabulqiluvchiKartasi),
+          ],
+        ),
       ),
     );
   }

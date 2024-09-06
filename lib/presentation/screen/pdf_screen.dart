@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:for_sample/data/core/constant/consts.dart';
 import 'package:for_sample/presentation/widget/exel.dart';
 import 'package:for_sample/presentation/widget/invoys.dart';
 import 'package:for_sample/presentation/widget/pdf.dart';
@@ -17,21 +18,22 @@ class _PdfScreenState extends State<PdfScreen> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          leading: const Icon(
-            Icons.sort_rounded,
-            color: Colors.black87,
-          ),
+          // leading: const Icon(
+          //   Icons.sort_rounded,
+          //   color: Colors.black87,
+          // ),
           centerTitle: true,
-          backgroundColor: Colors.blue[200],
+          backgroundColor: MyColors.bgColor,
           bottom: const TabBar(
-            indicatorPadding: EdgeInsets.all(2),
+            // indicatorPadding: EdgeInsets.all(2),
             labelPadding: EdgeInsets.all(10),
             indicatorWeight: 5,
-            indicatorColor: Colors.white,
+            indicatorColor: Color.fromARGB(255, 9, 21, 107),
+            dividerColor: MyColors.bgColor,
             tabs: [
-              Text('    Invoys   ', style: TextStyle(fontSize: 24)),
-              Text('    Exsel    ', style: TextStyle(fontSize: 24)),
-              Text('     Pdf     ', style: TextStyle(fontSize: 24)),
+              Text('Invoys', style: TextStyle(fontSize: 24)),
+              Text('Pdf', style: TextStyle(fontSize: 24)),
+              Text('Exsel', style: TextStyle(fontSize: 24)),
             ],
           ),
           title: Text(
@@ -46,8 +48,8 @@ class _PdfScreenState extends State<PdfScreen> {
         body: const TabBarView(
           children: [
             Invoys(),
-            Exel(),
             Pdf(),
+            Exel(),
           ],
         ),
       ),
